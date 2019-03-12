@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { stringify } from '@angular/core/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,16 @@ export class DataService {
     return this.http.get('http://localhost:2025/api/Employee/getAll');
   }
 
-  addEmployee(){
-    return this.http.get('http://localhost:2025/api/Employee/add');
+  getEmployee(name,surname){
+    let attributeString = "name="+name+"&surname="+surname;
+    return this.http.get('http://localhost:2025/api/Employee/getEmployee?'+attributeString);
+  }
+
+  addEmployee(name,surname,age){
+    
+    let attributeString = "name="+name+"&surname="+surname+"&age="+age;
+
+    return this.http.get('http://localhost:2025/api/Employee/add?'+attributeString);
   }
 
   getDepartments(){
