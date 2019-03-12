@@ -15,4 +15,12 @@ export class DataService {
   getUsers(){
     return this.http.get('https://reqres.in/api/users');
   }
+
+  getEmployees(){
+    return this.http.get('http://localhost:2025/api/Employee/getAll');
+  }
+
+  addEmployee(){
+    return this.http.get('http://localhost:2025/api/Employee/add');
+  }
 }
