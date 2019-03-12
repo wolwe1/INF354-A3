@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
 export class ApiComponent implements OnInit {
 
   employees : Object;
+  departments : Object;
 
   constructor(private data : DataService) { }
 
@@ -16,9 +17,12 @@ export class ApiComponent implements OnInit {
     this.data.getEmployees().subscribe(data =>{
       this.employees = data
       console.log(this.employees);
-    }
-      
-    );
+    });
+
+    this.data.getDepartments().subscribe(data => {
+      this.departments = data
+      console.log(this.departments)
+    });
 
   }
 

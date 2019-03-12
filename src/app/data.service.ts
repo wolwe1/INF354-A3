@@ -23,4 +23,8 @@ export class DataService {
   addEmployee(){
     return this.http.get('http://localhost:2025/api/Employee/add');
   }
+
+  getDepartments(){
+    return this.http.get('http://localhost:2025/api/Employee/getDepartments');
+  }
 }

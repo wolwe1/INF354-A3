@@ -1,8 +1,16 @@
 <h1 [ngStyle] = "{'color' : employees ? 'red' : 'black'}">Here is the current employees</h1>
 
+
+
 <ul *ngIf="employees">
-    <li *ngFor="let employee of employees.data">
-      <p>{{ employee.name }} {{ employee.surname }} {{ employee.age }}</p>
-    </li>
-    <hr/>
-</ul>
+    <ul *ngIf = "departments">
+        <li *ngFor="let dept of departments">
+            {{dept}}
+            <hr/>
+            <li *ngFor="let employee of employees">
+                <h4>{{ employee.name }} {{ employee.surname }} {{ employee.age }}</h4>
+            </li>
+  
+        </li>
+    </ul>  
+  </ul>
